@@ -12,8 +12,6 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/new", async (req, res) => {
-  // CREATE A PRODUCT PAGE
-  // res.render("products")
   res.render("newProduct");
 });
 
