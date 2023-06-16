@@ -49,10 +49,14 @@ router.post("/register", async (req, res, next) => {
 router.get("/logout", (req, res) => {
   res
     .status(200)
-    .cookie("token", "", { expires: new Date(Date.now()) })
+    .cookie("token", "", {
+      expires: new Date(Date.now()),
+      sameSite: "none",
+      secure: true,
+    })
     .json({
       success: true,
-      message: "Logged Out",
+      user: req.user,
     });
 });
 
